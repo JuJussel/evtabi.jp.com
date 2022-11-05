@@ -1,5 +1,6 @@
 ---
 title: The birth of EV Tabi Japan
+date: 2022/11/05
 tags:
     - Community
 categories: Announcements
