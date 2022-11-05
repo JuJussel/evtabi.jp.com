@@ -197,7 +197,7 @@ analytics:
     enable: true
     type: google # google
     google:
-        id: 4259825248
+        id: G-ZD2EGZ95VH
 # Doc：https://artitalk.js.org/
 artitalk:
     enable: false
