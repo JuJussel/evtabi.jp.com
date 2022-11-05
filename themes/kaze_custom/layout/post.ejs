@@ -96,12 +96,42 @@
     prev_link: page.prev ? page.prev.path : '', next_link: page.next ? page.next.path : '',
     prev_title: page.prev ? page.prev.title : '', next_title: page.next ? page.next.title : ''
   }) %>
-<% if(theme.comment.enable && page.comment !== false) { %>
+<% if(page.comment !== false) { %>
   <div 
     class="card card-content comment-card" 
     style="margin-top: 16px;">
-    <div class="comment-card-title">评论</div>
-    <%- partial('_partial/plugins/comments/' + theme.comment.type) %>
+    <div id="graphcomment"></div>
+    <script type="text/javascript">
+
+      /* - - - CONFIGURATION VARIABLES - - - */
+
+      var __semio__params = {
+        graphcommentId: "EVTabi-EN", // make sure the id is yours
+
+        behaviour: {
+          // HIGHLY RECOMMENDED
+          uid: "<%= page.title %>", // uniq identifer for the comments thread on your page (ex: your page id)
+        },
+
+        // configure your variables here
+
+      }
+
+      /* - - - DON'T EDIT BELOW THIS LINE - - - */
+
+      function __semio__onload() {
+        __semio__gc_graphlogin(__semio__params)
+      }
+
+
+      (function () {
+        var gc = document.createElement('script'); gc.type = 'text/javascript'; gc.async = true;
+        gc.onload = __semio__onload; gc.defer = true; gc.src = 'https://integration.graphcomment.com/gc_graphlogin.js?' + Date.now();
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(gc);
+      })();
+
+
+    </script>
   </div>
 <% } %>
 <div 
