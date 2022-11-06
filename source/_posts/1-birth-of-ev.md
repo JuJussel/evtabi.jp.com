@@ -4,6 +4,7 @@ date: 2022/11/05
 tags:
     - Community
 categories: Announcements
+banner_img: /images/model3.png
 ---
 
 ## Here we go!

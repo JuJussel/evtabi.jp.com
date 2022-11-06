@@ -20,7 +20,7 @@ menus:
     # artitalk: /shuoshuo # You can uncomment to add this route
 
 about:
-    description: description
+    description: Exploring Japan in a BEV.
     social_links:
         - {
               icon: icon-youtube,
