@@ -16,6 +16,9 @@ artitalk:
 posts:
     title: Posts
 
+browse:
+    title: Browse
+
 categories:
     title: Categories
     total: Total posts

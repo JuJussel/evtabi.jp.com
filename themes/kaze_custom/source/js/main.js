@@ -191,7 +191,7 @@
                                 -1 === t.indexOf("<li>"))
                             )
                                 return (o.innerHTML =
-                                    '<ul><span class="local-search-empty">没有搜索到结果<span></ul>');
+                                    '<ul><span class="local-search-empty">No results<span></ul>');
                             o.innerHTML = t;
                         }
                     });

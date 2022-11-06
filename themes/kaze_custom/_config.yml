@@ -13,8 +13,7 @@ author_description: Exploring Japan.
 #------------------------
 menus:
     archive: /archives
-    tags: /tags
-    categories: /categories
+    browse: /categories
     about: /about
     friends: /links
     # artitalk: /shuoshuo # You can uncomment to add this route

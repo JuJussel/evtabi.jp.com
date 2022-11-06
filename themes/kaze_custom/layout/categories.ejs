@@ -8,18 +8,36 @@
   <div>
     <%= __('categories.total').split(' ')[0] %>&nbsp;<%= site.posts.data.length %>&nbsp;<%= __('categories.total').split(' ')[1] %>
   </div>
+  <div class="categories-page-card" style="margin-top: 20px">
+    <% for(const postList of site.categories.data) { %>
+      <a 
+        href="<%= url_for(postList.path) %>" 
+        class="categories-page-list-item" 
+        style="margin-top: 0;">
+        <span><%= postList.slug %></span>
+        <span
+          class="categories-page-list-item-total">
+          <%= __('categories.total').split(' ')[0] %>&nbsp;<%= postList.posts.length %>&nbsp;<%= __('categories.total').split(' ')[1] %>
+        </span>
+      </a>
+    <% } %>
+  </div>
 </div>
-<div class="card card-content categories-page-card">
-  <% for(const postList of site.categories.data) { %>
-    <a 
-      href="<%= url_for(postList.path) %>" 
-      class="categories-page-list-item" 
-      style="margin-top: 0;">
-      <span><%= postList.slug %></span>
-      <span
-        class="categories-page-list-item-total">
-        <%= __('categories.total').split(' ')[0] %>&nbsp;<%= postList.posts.length %>&nbsp;<%= __('categories.total').split(' ')[1] %>
-      </span>
-    </a>
-  <% } %>
+<div class="card card-content">
+  <div class="tags-page-title" style="margin-bottom: 0.6rem">
+    <%= __('tags.title') %>
+  </div>
+  <div>
+    <%= __('tags.total').split(' ')[0] %>&nbsp;<%= site.tags.data.length %>&nbsp;<%= __('tags.total').split(' ')[1] %>
+  </div>
+  <div class="tags-list" style="margin-top: 20px">
+    <% site.tags.data.sort((a, b)=> (a.posts.data.length - b.posts.data.length)).reverse().forEach(function(item){ %>
+      <a href="<%= url_for(item.path) %>" title="<%- item.name %>">
+        <div class="tags-list-item">
+          <%= item.name %>
+        </div>
+      </a>
+      <% }); %>
+  </div>
+
 </div>
